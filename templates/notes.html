@@ -3,55 +3,71 @@
 
 <head>
     <title>QuickNotes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <h1>Welcome to QuickNotes</h1>
+    <main class="notes-container">
 
-    <form action="/notes" method="POST">
+        <h1>Welcome to QuickNotes 📝</h1>
+
+        <div class="note-form">
+
+            <h2>Create a Note</h2>
+
+            <form action="/notes" method="POST">
+
+                <input
+                    type="text"
+                    name="title"
+                    placeholder="Enter Title"
+                    required>
+
+                <br><br>
+
+                <textarea
+                    name="content"
+                    placeholder="Write your note..."
+                    required></textarea>
+
+                <br><br>
+
+                <button class="save-btn" type="submit">
+                    Save Note
+                </button>
+
+            </form>
+
+        </div>
+
         <hr>
 
-<h2>My Notes</h2>
+        <h2>My Notes</h2>
 
-{% for note in notes %}
+        {% for note in notes %}
 
-<h3>{{ note["title"] }}</h3>
+        <div class="note-card">
 
-<p>{{ note["content"] }}</p>
+            <h3>{{ note["title"] }}</h3>
 
-<hr>
+            <p>{{ note["content"] }}</p>
 
-{% endfor %}
-form action="/delete/{{ note['id'] }}" method="POST">
+            <form action="/delete/{{ note['id'] }}" method="POST">
 
-    <button type="submit">
-        Delete
-    </button>
+                <button class="delete-btn" type="submit">
+                    Delete
+                </button>
 
-</form>
-<
+            </form>
 
-        <input
-            type="text"
-            name="title"
-            placeholder="Enter Title"
-            required>
+        </div>
 
-        <br><br>
+        <br>
 
-        <textarea
-            name="content"
-            placeholder="Write your note..."
-            required></textarea>
+        {% endfor %}
 
-        <br><br>
-
-        <button type="submit">
-            Save Note
-        </button>
-
-    </form>
+    </main>
 
 </body>
 

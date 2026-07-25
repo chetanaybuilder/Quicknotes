@@ -1,0 +1,733 @@
+/* =========================
+   QUICKNOTES STYLE.CSS
+   PART 1
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#f5f7fb;
+    color:#222;
+    min-height:100vh;
+}
+
+/* Hero */
+
+.hero{
+    width:100%;
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(135deg,#2563eb,#4f46e5);
+    color:white;
+    padding:20px;
+}
+
+.hero h1{
+    font-size:4rem;
+    font-family:'Poppins',sans-serif;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    opacity:.9;
+    margin-bottom:35px;
+}
+
+.button-groups{
+    display:flex;
+    gap:20px;
+}
+
+.button-groups a{
+    text-decoration:none;
+    color:white;
+    background:white;
+    color:#2563eb;
+    padding:14px 30px;
+    border-radius:10px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.button-groups a:hover{
+    transform:translateY(-4px);
+    box-shadow:0 12px 30px rgba(0,0,0,.2);
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:25px;
+    color:#888;
+    background:white;
+}
+
+/* Login & Register */
+
+main{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:30px;
+}
+
+section{
+    width:100%;
+    max-width:450px;
+    background:white;
+    padding:40px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+header{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+header h1{
+    font-size:2rem;
+    color:#2563eb;
+    margin-bottom:8px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+}
+
+input{
+    width:100%;
+    padding:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-size:15px;
+    margin-bottom:18px;
+    transition:.3s;
+}
+
+input:focus{
+    border-color:#2563eb;
+    outline:none;
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+}
+
+textarea{
+    width:100%;
+    min-height:160px;
+    resize:none;
+    padding:15px;
+    border-radius:10px;
+    border:1px solid #ddd;
+    font-size:15px;
+    transition:.3s;
+}
+
+textarea:focus{
+    outline:none;
+    border-color:#2563eb;
+    box-shadow:0 0 0 4px rgba(37,99,235,.15);
+}
+
+button{
+    padding:15px;
+    border:none;
+    background:#2563eb;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+    font-weight:600;
+    transition:.3s;
+}
+
+button:hover{
+    background:#1d4ed8;
+    transform:translateY(-2px);
+}
+/* =========================
+   QUICKNOTES STYLE.CSS
+   PART 2 - NOTES DASHBOARD
+========================= */
+
+.notes-container{
+    width:100%;
+    max-width:1100px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.notes-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:35px;
+}
+
+.notes-header h1{
+    color:#2563eb;
+    font-size:2.2rem;
+}
+
+.notes-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+}
+
+.note-card{
+    background:white;
+    border-radius:16px;
+    padding:22px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+    transition:.3s;
+    border:1px solid #e5e7eb;
+}
+
+.note-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px rgba(0,0,0,.12);
+}
+
+.note-card h3{
+    color:#1e3a8a;
+    margin-bottom:12px;
+    font-size:1.3rem;
+}
+
+.note-card p{
+    color:#555;
+    line-height:1.7;
+    word-wrap:break-word;
+}
+
+/* Create Note Box */
+
+.note-form{
+    background:white;
+    padding:30px;
+    border-radius:18px;
+    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    margin-bottom:35px;
+}
+
+.note-form h2{
+    margin-bottom:20px;
+    color:#2563eb;
+}
+
+.note-form input,
+.note-form textarea{
+    margin-bottom:18px;
+}
+
+/* Save Button */
+
+.save-btn{
+    width:100%;
+    background:#2563eb;
+}
+
+.save-btn:hover{
+    background:#1d4ed8;
+}
+
+/* Delete Button */
+
+.delete-btn{
+    margin-top:18px;
+    background:#ef4444;
+    width:100%;
+}
+
+.delete-btn:hover{
+    background:#dc2626;
+}
+
+/* Horizontal Line */
+
+hr{
+    border:none;
+    height:1px;
+    background:#ececec;
+    margin:25px 0;
+}
+
+/* Empty Notes */
+
+.empty-notes{
+    text-align:center;
+    padding:60px;
+    color:#888;
+    font-size:18px;
+}
+
+/* Welcome */
+
+.welcome{
+    font-size:1.1rem;
+    color:#666;
+    margin-bottom:25px;
+}
+
+/* Card Animation */
+
+.note-card{
+    animation:fadeIn .5s ease;
+}
+
+@keyframes fadeIn{
+
+0%{
+opacity:0;
+transform:translateY(20px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Links */
+
+a{
+    text-decoration:none;
+    color:#2563eb;
+    transition:.3s;
+}
+
+a:hover{
+    color:#1d4ed8;
+}
+/* =========================
+   QUICKNOTES STYLE.CSS
+   PART 3 - RESPONSIVE & UI
+========================= */
+
+/* Navigation */
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+    background:white;
+    box-shadow:0 3px 12px rgba(0,0,0,.08);
+}
+
+nav h2{
+    color:#2563eb;
+    font-size:26px;
+}
+
+nav a{
+    font-weight:600;
+    margin-left:18px;
+}
+
+/* Dashboard */
+
+.dashboard{
+    max-width:1100px;
+    margin:40px auto;
+    padding:20px;
+}
+
+.dashboard h1{
+    margin-bottom:10px;
+    color:#1f2937;
+}
+
+.dashboard p{
+    color:#6b7280;
+    margin-bottom:25px;
+}
+
+/* Card Hover */
+
+.note-card:hover h3{
+    color:#2563eb;
+}
+
+/* Inputs */
+
+input::placeholder,
+textarea::placeholder{
+    color:#9ca3af;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#f3f4f6;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2563eb;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#1d4ed8;
+}
+
+/* Selection */
+
+::selection{
+    background:#2563eb;
+    color:white;
+}
+
+/* Fade */
+
+.fade{
+    animation:fade .6s ease;
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
+
+/* Floating */
+
+.float{
+    animation:float 5s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* Shadows */
+
+.shadow{
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+/* Utility */
+
+.center{
+    text-align:center;
+}
+
+.mt-20{
+    margin-top:20px;
+}
+
+.mt-40{
+    margin-top:40px;
+}
+
+.mb-20{
+    margin-bottom:20px;
+}
+
+.mb-40{
+    margin-bottom:40px;
+}
+
+.round{
+    border-radius:18px;
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:3rem;
+}
+
+.notes-grid{
+grid-template-columns:1fr;
+}
+
+section{
+padding:28px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero{
+padding:40px 20px;
+}
+
+.hero h1{
+font-size:2.4rem;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.button-groups{
+flex-direction:column;
+width:100%;
+}
+
+.button-groups a{
+width:100%;
+text-align:center;
+}
+
+.notes-header{
+flex-direction:column;
+align-items:flex-start;
+gap:15px;
+}
+
+.note-form{
+padding:22px;
+}
+
+.note-card{
+padding:18px;
+}
+
+header h1{
+font-size:28px;
+}
+
+button{
+width:100%;
+}
+
+}
+/* =========================
+   QUICKNOTES STYLE.CSS
+   PART 4 - FINAL POLISH
+========================= */
+
+/* Background */
+
+body{
+    background:linear-gradient(135deg,#eef4ff,#f9fbff);
+}
+
+/* Glass Effect */
+
+.glass{
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(18px);
+    border:1px solid rgba(255,255,255,.3);
+}
+
+/* Success Message */
+
+.success{
+    background:#dcfce7;
+    color:#166534;
+    padding:14px;
+    border-radius:10px;
+    margin-bottom:20px;
+    border-left:5px solid #22c55e;
+}
+
+/* Error Message */
+
+.error{
+    background:#fee2e2;
+    color:#991b1b;
+    padding:14px;
+    border-radius:10px;
+    margin-bottom:20px;
+    border-left:5px solid #ef4444;
+}
+
+/* Info */
+
+.info{
+    background:#dbeafe;
+    color:#1d4ed8;
+    padding:14px;
+    border-radius:10px;
+    margin-bottom:20px;
+    border-left:5px solid #2563eb;
+}
+
+/* Badge */
+
+.badge{
+    display:inline-block;
+    padding:6px 12px;
+    border-radius:30px;
+    background:#2563eb;
+    color:white;
+    font-size:13px;
+    font-weight:600;
+}
+
+/* Small Buttons */
+
+.btn-outline{
+    background:white;
+    color:#2563eb;
+    border:2px solid #2563eb;
+}
+
+.btn-outline:hover{
+    background:#2563eb;
+    color:white;
+}
+
+/* Note Counter */
+
+.note-count{
+    font-size:15px;
+    color:#6b7280;
+    margin-bottom:20px;
+}
+
+/* Cards */
+
+.note-card{
+    overflow:hidden;
+    position:relative;
+}
+
+.note-card::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:5px;
+    background:linear-gradient(90deg,#2563eb,#4f46e5);
+}
+
+/* Logo */
+
+.logo{
+    font-size:2rem;
+    font-weight:700;
+    color:#2563eb;
+}
+
+/* Footer */
+
+footer{
+    margin-top:60px;
+    border-top:1px solid #e5e7eb;
+    background:white;
+    color:#6b7280;
+    font-size:14px;
+}
+
+/* Hover Animation */
+
+button,
+.button-groups a{
+    transition:all .3s ease;
+}
+
+button:hover,
+.button-groups a:hover{
+    transform:translateY(-3px) scale(1.02);
+}
+
+/* Focus */
+
+button:focus,
+input:focus,
+textarea:focus{
+    outline:none;
+}
+
+/* Smooth Scroll */
+
+html{
+    scroll-behavior:smooth;
+}
+
+/* Fade Up */
+
+.fade-up{
+    animation:fadeUp .7s ease;
+}
+
+@keyframes fadeUp{
+
+0%{
+opacity:0;
+transform:translateY(30px);
+}
+
+100%{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+/* Pulse */
+
+.pulse{
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.03);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+/* Copyright */
+
+footer p{
+    padding:20px;
+    text-align:center;
+}
+
+/* End */
