@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+venv/
+env/
+
+# Database and environment
+Quicknotes.db
+.env
+
+# Editor directories
+.vscode/
+.idea/
+
+# Byte-compiled / distribution
+dist/
+build/

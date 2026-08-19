@@ -1,14 +1,23 @@
 <!DOCTYPE html>
+<!-- Notes dashboard - shows and creates notes for the authenticated user -->
 <html>
 
 <head>
     <title>QuickNotes</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
 </head>
 
 <body>
 
     <main class="notes-container">
+
+        <nav>
+            <h2>QuickNotes</h2>
+            <div>
+                <a href="/logout">Logout</a>
+            </div>
+        </nav>
 
         <h1>Welcome to QuickNotes 📝</h1>
 
@@ -18,24 +27,15 @@
 
             <form action="/notes" method="POST">
 
-                <input
-                    type="text"
-                    name="title"
-                    placeholder="Enter Title"
-                    required>
+                <input type="text" name="title" placeholder="Enter Title" required>
 
                 <br><br>
 
-                <textarea
-                    name="content"
-                    placeholder="Write your note..."
-                    required></textarea>
+                <textarea name="content" placeholder="Write your note..." required></textarea>
 
                 <br><br>
 
-                <button class="save-btn" type="submit">
-                    Save Note
-                </button>
+                <button class="save-btn" type="submit">Save Note</button>
 
             </form>
 
@@ -55,9 +55,7 @@
 
             <form action="/delete/{{ note['id'] }}" method="POST">
 
-                <button class="delete-btn" type="submit">
-                    Delete
-                </button>
+                <button class="delete-btn" type="submit">Delete</button>
 
             </form>
 
