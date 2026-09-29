@@ -1,0 +1,19 @@
+{
+  "name": "quick-notes-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch --env-file=../.env src/index.js",
+    "start": "node src/index.js",
+    "migrate": "node --env-file=../.env src/migrate.js"
+  },
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.0",
+    "google-auth-library": "^9.14.0",
+    "helmet": "^8.0.0",
+    "pg": "^8.13.0"
+  },
+  "engines": { "node": ">=20.6" }
+}
