@@ -1,3 +1,7 @@
+/**
+ * @file auth.js
+ * @description Authentication routes and middleware utilizing Google OAuth2 and secure session cookies.
+ */
 import crypto from 'node:crypto';
 import { Router } from 'express';
 import { OAuth2Client } from 'google-auth-library';
@@ -31,6 +35,12 @@ async function loadUser(req) {
   return rows[0] ?? null;
 }
 
+/**
+ * Middleware to ensure the request is authenticated with a valid session.
+ * @param {import('express').Request} req - Express request object.
+ * @param {import('express').Response} res - Express response object.
+ * @param {import('express').NextFunction} next - Express next middleware function.
+ */
 export async function requireAuth(req, res, next) {
   try {
     const user = await loadUser(req);

@@ -1,8 +1,14 @@
+/**
+ * @file index.js
+ * @description Main entry point for the QuickNotes Express API server. Sets up middleware, routing, and error handling.
+ */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import express from 'express';
 import helmet from 'helmet';
 import cookieParser from 'cookie-parser';
+import cors from 'cors';
+import rateLimit from 'express-rate-limit';
 import authRouter from './auth.js';
 import notesRouter from './notes.js';
 
@@ -28,6 +34,15 @@ app.use(helmet({
   referrerPolicy: { policy: 'no-referrer' }, // lets Google avatars load
   crossOriginEmbedderPolicy: false,
 }));
+app.use(cors({ origin: appOrigin, credentials: true }));
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000,
+  max: 100,
+  message: { error: 'Too many requests, please try again later.' }
+});
+app.use(limiter);
+
 app.use(cookieParser());
 app.use(express.json({ limit: '256kb' }));
 

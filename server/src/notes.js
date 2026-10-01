@@ -1,3 +1,7 @@
+/**
+ * @file notes.js
+ * @description API routes for creating, reading, updating, and deleting notes.
+ */
 import { Router } from 'express';
 import { query } from './db.js';
 import { requireAuth } from './auth.js';
@@ -8,7 +12,13 @@ router.use(requireAuth);
 const UUID = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 const COLS = 'id, title, content, tags, category, is_pinned, created_at, updated_at';
 
-/** Validates a partial note payload. Returns { value } or { error }. */
+/**
+ * Validates a partial note payload. Returns { value } or { error }.
+ * @param {Object} body - Request body payload.
+ * @param {Object} options - Validation options.
+ * @param {boolean} options.partial - Whether partial payloads are allowed (e.g., for PATCH).
+ * @returns {Object} Validated values or error message.
+ */
 function validate(body, { partial }) {
   const v = {};
   const b = body ?? {};

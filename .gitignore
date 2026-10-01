@@ -1,7 +1,18 @@
-node_modules
-dist
+# Environment Variables
 .env
 .env.*
 !.env.example
-*.log
+
+# Dependencies
+node_modules/
+
+# Build Output
+client/dist/
+server/dist/
+dist/
+build/
+
+# IDE & OS
+.vscode/
+.idea/
 .DS_Store

@@ -9,7 +9,10 @@
     "db:migrate": "npm run migrate --prefix server",
     "dev": "concurrently -n api,web -c cyan,magenta \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
     "build": "npm run build --prefix client",
-    "start": "NODE_ENV=production npm start --prefix server"
+    "start": "NODE_ENV=production npm start --prefix server",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "npm run test --prefix server"
   },
   "devDependencies": { "concurrently": "^9.0.0" },
   "engines": { "node": ">=20.6.0" },
